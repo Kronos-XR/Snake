@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\snake.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Snake\\snake.csproj",
       "projectName": "snake",
-      "projectPath": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\snake.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\Snake\\snake.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\Snake\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

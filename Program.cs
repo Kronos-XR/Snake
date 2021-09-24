@@ -4,59 +4,59 @@ namespace snake
 {
     class Program
     {
-        static readonly int x = 80;
-        static readonly int y = 26;
-        static int headX = x / 2;
-        static int headY = y / 2;
-        static string directionOfMovement;
-        static int score = 0;
+        static readonly int screenWidth = 80;
+        static readonly int screenHeight = 26;
+        static int headX = screenWidth / 2;
+        static int headY = screenHeight / 2;
 
-        static int fruitX;
-        static int fruitY;
         static int lengthBody = 5;
-        static int[,] snakeBody = {{ headX, headY }, {0, 0}, {0, 0} };
         static void Main(string[] args)
         {
-            Console.SetWindowSize(x + 1, y + 3);
-            Console.SetBufferSize(x + 1, y + 3);
+            int score = 0;
+            int speed = 50;
+            int fruitX = 0;
+            int fruitY = 0;
+            string directionOfMovement = null;
+            int[,] snakeBody = { { headX, headY }, { 0, 0 }, { 0, 0 } };
+            Console.SetWindowSize(screenWidth + 1, screenHeight + 3);
+            Console.SetBufferSize(screenWidth + 1, screenHeight + 3);
             Console.CursorVisible = false;
             Body(snakeBody, lengthBody);
-
-            Fruit();
+            Fruit(ref fruitX, ref fruitY);
             while (true)
             {
-                Input();
-                HeadMove();
+                Input(ref directionOfMovement);
+                HeadMove(ref directionOfMovement);
 
                 if (headX == fruitX && headY == fruitY)
                 {
-                    Fruit();
+                    Fruit(ref fruitX, ref fruitY);
                     score += 100;
                     lengthBody += 1;
                 }
-                System.Threading.Thread.Sleep(200);
+                System.Threading.Thread.Sleep(speed);
                 snakeBody = Body(snakeBody, lengthBody);
-                Draw();
-                if (CheckGameOver())
+                Draw(ref snakeBody, fruitX, fruitY, score);
+                if (CheckGameOver(ref snakeBody))
                 {
                     break;
                 }
             }
-            Draw();
-            EndGameScript();
+            Draw(ref snakeBody, fruitX, fruitY, score);
+            EndGameScript(score);
         }
-        static void Draw()
+        static void Draw(ref int[,] snakeBody, int fruitX,int fruitY, int score)
         {
             Console.SetCursorPosition(0, 0);
-            for (int i = 0; i < x + 1; i++)
+            for (int i = 0; i < screenWidth + 1; i++)
             {
                 Console.Write("#");
             }
-            for (int i = 0; i < y - 1; i++)
+            for (int i = 0; i < screenHeight - 1; i++)
             {
-                Console.WriteLine("#" + "".PadRight(x - 1, ' ') + "#");
+                Console.WriteLine("#" + "".PadRight(screenWidth - 1, ' ') + "#");
             }
-            for (int i = 0; i < x + 1; i++)
+            for (int i = 0; i < screenWidth + 1; i++)
             {
                 Console.Write("#");
             }
@@ -98,31 +98,35 @@ namespace snake
             return snakeBody;
         }
 
-        static void Input()
+        static void Input(ref string directionOfMovement)
         {
             if (Console.KeyAvailable)
             {
                 var checkKey = Console.ReadKey(true);
                 switch (checkKey.KeyChar)
                 {
+                    case 'ц':
                     case 'w':
                         {
                             if (directionOfMovement != "DOWN")
                                 directionOfMovement = "UP";
                             break;
                         }
+                    case 'ф':
                     case 'a':
                         {
                             if (directionOfMovement != "RIGHT")
                                 directionOfMovement = "LEFT";
                             break;
                         }
+                    case 'ы':
                     case 's':
                         {
                             if (directionOfMovement != "UP")
                                 directionOfMovement = "DOWN";
                             break;
                         }
+                    case 'в':
                     case 'd':
                         {
                             if (directionOfMovement != "LEFT")
@@ -133,7 +137,7 @@ namespace snake
             }
         }
 
-        static void HeadMove()
+        static void HeadMove(ref string directionOfMovement)
         {
             switch (directionOfMovement)
             {
@@ -151,9 +155,9 @@ namespace snake
                     break;
             }
         }
-        static bool CheckGameOver()
+        static bool CheckGameOver(ref int[,]snakeBody)
         {
-            if (headX == x || headX == 0 || headY == y || headY == 0)
+            if (headX == screenWidth || headX == 0 || headY == screenHeight || headY == 0)
             {
                 return true;
             }
@@ -166,21 +170,21 @@ namespace snake
             }
             return false;
         }
-        static void EndGameScript()
+        static void EndGameScript(int score)
         {
             Console.SetCursorPosition(headX, headY);
             Console.Write("!");
-            Console.SetCursorPosition(x / 2, y / 2);
+            Console.SetCursorPosition(screenWidth / 2, screenHeight / 2);
             Console.Write("Game over ");
-            Console.SetCursorPosition(x / 2, y / 2 + 1);
+            Console.SetCursorPosition(screenWidth / 2, screenHeight / 2 + 1);
             Console.Write("Score " + score);
             Console.ReadKey(true);
         }
-        static void Fruit()
+        static void Fruit(ref int fruitX, ref int fruitY)
         {
             Random rnd = new Random();
-            fruitX = rnd.Next(1, x);
-            fruitY = rnd.Next(1, y);
+            fruitX = rnd.Next(1, screenWidth);
+            fruitY = rnd.Next(1, screenHeight);
         }
     }
 }

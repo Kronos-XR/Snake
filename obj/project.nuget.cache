@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W5WFVr/lPHRFkkx6GObr/OobMCTHIlT9l1WcO3uPad+ehjsjYrGw2fj/MxrHYhM4q3Tsd1DwwZXNtznCwhwFaw==",
+  "dgSpecHash": "Ts1u3JpbmGSmRLfa/zW3PYNUGZoQKv0GN+FpF1SairgugpbkK4CNNMj614CD7WaFiKKOXbAVDAJp8aTUEMe4tA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\source\\repos\\Snake\\snake.csproj",
+  "projectFilePath": "E:\\GitHub\\Snake\\snake.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

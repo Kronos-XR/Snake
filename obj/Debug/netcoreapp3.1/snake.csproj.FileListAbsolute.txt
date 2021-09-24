@@ -11,3 +11,16 @@ C:\Users\User\source\repos\ConsoleApp1\obj\Debug\netcoreapp3.1\snake.csproj.Core
 C:\Users\User\source\repos\ConsoleApp1\obj\Debug\netcoreapp3.1\snake.dll
 C:\Users\User\source\repos\ConsoleApp1\obj\Debug\netcoreapp3.1\snake.pdb
 C:\Users\User\source\repos\ConsoleApp1\obj\Debug\netcoreapp3.1\snake.genruntimeconfig.cache
+E:\GitHub\Snake\bin\Debug\netcoreapp3.1\snake.exe
+E:\GitHub\Snake\bin\Debug\netcoreapp3.1\snake.deps.json
+E:\GitHub\Snake\bin\Debug\netcoreapp3.1\snake.runtimeconfig.json
+E:\GitHub\Snake\bin\Debug\netcoreapp3.1\snake.runtimeconfig.dev.json
+E:\GitHub\Snake\bin\Debug\netcoreapp3.1\snake.dll
+E:\GitHub\Snake\bin\Debug\netcoreapp3.1\snake.pdb
+E:\GitHub\Snake\obj\Debug\netcoreapp3.1\snake.csproj.AssemblyReference.cache
+E:\GitHub\Snake\obj\Debug\netcoreapp3.1\snake.AssemblyInfoInputs.cache
+E:\GitHub\Snake\obj\Debug\netcoreapp3.1\snake.AssemblyInfo.cs
+E:\GitHub\Snake\obj\Debug\netcoreapp3.1\snake.csproj.CoreCompileInputs.cache
+E:\GitHub\Snake\obj\Debug\netcoreapp3.1\snake.dll
+E:\GitHub\Snake\obj\Debug\netcoreapp3.1\snake.pdb
+E:\GitHub\Snake\obj\Debug\netcoreapp3.1\snake.genruntimeconfig.cache
